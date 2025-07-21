@@ -1,10 +1,11 @@
+
 # RecipeGen: AI-Powered Semantic Recipe Recommendation and Generation
 
 ## Project Overview
 
-RecipeGen is an AI-driven application designed to assist users in discovering and generating cooking recipes based on the ingredients they have, specific dietary preferences, or custom free-form prompts. The system combines semantic understanding through Sentence-BERT, efficient similarity search using FAISS, and recipe generation using the Phi-2 language model from Hugging Face.
+**RecipeGen** is an AI-based application that helps users discover and generate cooking recipes based on available ingredients, dietary preferences, or custom prompts. It combines semantic understanding using Sentence-BERT, fast similarity search with FAISS, and language generation via the Phi-2 model from Hugging Face.
 
-This project demonstrates how modern natural language processing techniques can be applied to real-world tasks such as recipe recommendation and generation, delivering an intuitive and personalized cooking assistant.
+The project highlights the power of combining retrieval-based methods and generative AI to create personalized recipe experiences.
 
 ---
 
@@ -12,53 +13,61 @@ This project demonstrates how modern natural language processing techniques can 
 
 ### Ingredient-Based Recipe Recommendation
 
-Users can enter a list of ingredients they have, and the application will return the most relevant recipe from a curated dataset using semantic similarity.
+Input a list of ingredients to retrieve the most semantically relevant recipe from a curated dataset.
 
-### AI-Based Recipe Generation
+### Custom AI Recipe Generation
 
-By entering a natural language prompt (e.g., “Create a vegan breakfast with oats and banana”), users receive a freshly generated recipe written by an AI model.
+Use natural prompts like “Make a gluten-free breakfast with oats and berries,” and receive a freshly generated recipe using the Phi-2 language model.
 
-### Semantic Matching Using Sentence-BERT and FAISS
+### Semantic Search with Sentence-BERT and FAISS
 
-All recipe texts and user inputs are converted into sentence embeddings using Sentence-BERT. These embeddings are indexed using FAISS, enabling fast and accurate retrieval of the most relevant recipes.
+User inputs and recipes are converted into embeddings with Sentence-BERT. FAISS is used for efficient nearest-neighbor retrieval.
 
-### Simple and Interactive Web Interface
+### Gradio Interface (Jupyter-Notebook-Based)
 
-A web-based user interface built with Gradio allows users to interact with the application easily—no technical knowledge required.
+The interface is built using Gradio and is launched directly from the Jupyter Notebook. No separate app file is needed.
 
 ---
 
 ## Tech Stack
 
-| Component            | Purpose                                     |
+| Tool/Library         | Purpose                                     |
 | -------------------- | ------------------------------------------- |
-| Sentence-BERT        | Embedding user inputs and recipe texts      |
-| FAISS                | Fast vector similarity search               |
-| Phi-2 (Hugging Face) | Generative language model for recipes       |
-| Gradio               | Interface for user interaction              |
-| Additional Tools     | Transformers, Torch, Datasets, Scikit-learn |
+| Sentence-BERT        | Generating embeddings for semantic matching |
+| FAISS                | Fast nearest-neighbor search                |
+| Phi-2 (Hugging Face) | Recipe generation using a language model    |
+| Gradio               | Web-based interactive UI                    |
+| Others:              | Transformers, Torch, Datasets, Scikit-learn |
 
 ---
 
-## Installation and Running the Application
+## Installation and Setup
 
 ### Prerequisites
 
-Ensure Python (version 3.8 or above) is installed. Then, install the required Python libraries using:
+Ensure you have Python 3.8+ and Jupyter installed. Install all dependencies using:
 
 ```bash
-pip install gradio sentence-transformers faiss-cpu transformers torch
+pip install -r requirements.txt
 ```
 
-### Running the App
+---
 
-To start the application locally, run:
+## Running the App
+
+Since the application runs via the Jupyter Notebook interface, follow these steps:
+
+1. Launch Jupyter Notebook or Jupyter Lab in the project directory:
 
 ```bash
-python app.py
+jupyter notebook
 ```
 
-Once launched, the app will be available in your browser at `http://127.0.0.1:7860`.
+2. Open `RecipeGen.ipynb`.
+
+3. Run all the cells in sequence.
+
+4. Once the Gradio cell is executed, a local URL will appear (e.g., `http://127.0.0.1:7860/`). Open it in your browser to interact with the application.
 
 ---
 
@@ -66,13 +75,11 @@ Once launched, the app will be available in your browser at `http://127.0.0.1:78
 
 ```
 GenAI_RecipeGen/
-├── app.py                  # Main Gradio app script
-├── recipegen_utils.py      # Functions for search and generation
-├── recipes.json            # Curated recipe dataset
-├── embeddings.faiss        # FAISS index (optional or auto-generated)
-├── RecipeGen.ipynb         # Jupyter notebook for experimentation
-├── requirements.txt        # List of Python dependencies
-├── LICENSE                 # License file (MIT)
+├── RecipeGen.ipynb         # Main notebook with search + generation + Gradio UI
+├── recipegen_utils.py      # Helper functions
+├── recipes.json            # Recipe dataset
+├── requirements.txt        # Python dependencies
+├── LICENSE                 # MIT License
 └── README.md               # Project documentation
 ```
 
@@ -80,24 +87,26 @@ GenAI_RecipeGen/
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
 ## Acknowledgments
 
-This project was made possible thanks to the open-source tools and models provided by:
+This project utilizes resources from:
 
-* Hugging Face (Transformers and Phi-2)
-* SentenceTransformers community
+* Hugging Face Transformers (including the Phi-2 model)
+* SentenceTransformers
 * Facebook AI Research (FAISS)
-* Gradio for the UI framework
-* The broader Python and machine learning community
+* Gradio
+* The open-source Python ML ecosystem
 
 ---
 
 Let me know if you'd like me to:
 
-* Save this as a `.md` file for direct use in your repo.
-* Help set up a `LICENSE` file.
-* Add GitHub badges or CI/CD actions to polish the repository.
+* Save this as a `README.md` file for your repo
+* Add it to your Git project automatically
+* Help you create a `requirements.txt` based on the actual notebook
+
+Would you like me to do any of that now?
