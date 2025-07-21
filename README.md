@@ -103,10 +103,3 @@ This project utilizes resources from:
 
 ---
 
-Let me know if you'd like me to:
-
-* Save this as a `README.md` file for your repo
-* Add it to your Git project automatically
-* Help you create a `requirements.txt` based on the actual notebook
-
-Would you like me to do any of that now?
