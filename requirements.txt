@@ -1,0 +1,16 @@
+glob
+ast
+pickle
+math
+gradio
+sentence_transformers
+faiss
+transformers
+torch
+scikit-learn
+numpy
+pandas
+tqdm
+difflib
+re
+os
